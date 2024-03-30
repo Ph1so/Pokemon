@@ -79,7 +79,7 @@
 
   .btn {
     position: fixed; /* Set position to fixed */
-    bottom: 20px; /* Position the button 20 pixels from the bottom */
+    bottom: 100px; /* Position the button 20 pixels from the bottom */
     left: 50%; /* Position the button horizontally centered */
     transform: translateX(-50%); /* Center horizontally */
     display: block;
