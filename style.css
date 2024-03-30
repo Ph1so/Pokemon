@@ -93,11 +93,11 @@
   }
 
   .round {
-    position: relative;
-    top: -350px; /* Position the button at the top */
-    left: 50%; /* Position the button horizontally centered */
-    transform: translateX(-50%); /* Center horizontally */
-    display: none;
+    position: absolute;
+    top: -100px; /* Position the round element at the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    display: none; /* Initially hidden */
     padding: 15px 40px;
     font-size: 18px;
     background-color: #101010;
@@ -105,11 +105,12 @@
     margin: 30px auto;
     border: none;
     border-radius: 5px;
-}
-
-.log {
-  position: relative;
-  top: -250px;
-  right: 50;
-  display: none;
-}
+  }
+  
+  .log {
+    position: fixed;
+    top: 0; /* Position the log at the top */
+    right: 50px; /* Adjust as needed */
+    display: none; /* Initially hidden */
+  }
+  

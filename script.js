@@ -22,6 +22,7 @@ const typeColor = {
   const btn = document.getElementById("btn");
   const rtext = document.getElementById('round');
   const ltext = document.getElementById('log');
+
   let getPokeData = () => {
     // Generate data for the first card
     generateCard(card1);
@@ -97,8 +98,9 @@ const typeColor = {
   
   let game = () => {
     getPokeData();
+    ltext.textContent = ""; // Clear the text content of ltext
     let count = 3; // Start the countdown from 3
-
+    let r = 1;
     // Countdown function
     const countdown = () => {
         if (count >= 1) {
@@ -113,7 +115,7 @@ const typeColor = {
                 rtext.style.display = "block";
                 rtext.textContent = "FIGHT!";
                 setTimeout(() => {
-                    rtext.textContent = "Round 1";
+                    rtext.textContent = "Round " + r;
                     ltext.style.display = "block";
                 }, 1000); // 1000 milliseconds = 1 second
             }, 1000); // 1000 milliseconds = 1 second
@@ -121,7 +123,9 @@ const typeColor = {
     };
 
     countdown(); // Start the countdown
+    ltext.textContent += "\nright first";
 };
+
 
   btn.addEventListener("click", game);
   
