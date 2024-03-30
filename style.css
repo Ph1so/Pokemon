@@ -91,3 +91,25 @@
     border: none;
     border-radius: 5px;
   }
+
+  .round {
+    position: relative;
+    top: -350px; /* Position the button at the top */
+    left: 50%; /* Position the button horizontally centered */
+    transform: translateX(-50%); /* Center horizontally */
+    display: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    background-color: #101010;
+    color: #ffffff;
+    margin: 30px auto;
+    border: none;
+    border-radius: 5px;
+}
+
+.log {
+  position: relative;
+  top: -250px;
+  right: 50;
+  display: none;
+}

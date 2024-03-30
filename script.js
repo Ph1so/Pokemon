@@ -20,7 +20,8 @@ const typeColor = {
   const card1 = document.getElementById("card1");
   const card2 = document.getElementById("card2");
   const btn = document.getElementById("btn");
-  
+  const rtext = document.getElementById('round');
+  const ltext = document.getElementById('log');
   let getPokeData = () => {
     // Generate data for the first card
     generateCard(card1);
@@ -94,5 +95,33 @@ const typeColor = {
     });
   };
   
-  btn.addEventListener("click", getPokeData);
+  let game = () => {
+    getPokeData();
+    let count = 3; // Start the countdown from 3
+
+    // Countdown function
+    const countdown = () => {
+        if (count >= 1) {
+            setTimeout(() => {
+                rtext.style.display = "block";
+                rtext.textContent = count;
+                count--;
+                countdown(); // Call the countdown function recursively
+            }, 1000); // 1000 milliseconds = 1 second
+        } else {
+            setTimeout(() => {
+                rtext.style.display = "block";
+                rtext.textContent = "FIGHT!";
+                setTimeout(() => {
+                    rtext.textContent = "Round 1";
+                    ltext.style.display = "block";
+                }, 1000); // 1000 milliseconds = 1 second
+            }, 1000); // 1000 milliseconds = 1 second
+        }
+    };
+
+    countdown(); // Start the countdown
+};
+
+  btn.addEventListener("click", game);
   
